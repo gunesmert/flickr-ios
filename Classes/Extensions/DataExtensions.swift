@@ -9,6 +9,10 @@
 import Foundation
 
 extension Data {
+	/*
+		This method is required since Flickr does not return a valid json response even tough
+		we are asking for a json
+	*/
 	func trimmed() -> Data? {
 		guard var dataString = String(data: self, encoding: String.Encoding.utf8) else {
 			return nil
