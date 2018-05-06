@@ -18,5 +18,15 @@ final class MainViewController: BaseViewController {
 		super.init()
 		
 		title = "Flickr tretton37"
+		
+		fetchInitialData()
+	}
+	
+	// MARK: - Test
+	func fetchInitialData() {
+		let draft = FeedElementDraft(tags: ["tretton37"], pageNumber: 0)
+		NetworkManager.shared.fetchElements(withDraft: draft) { jsonString in
+			
+		}
 	}
 }

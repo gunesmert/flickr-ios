@@ -15,6 +15,9 @@
 		0DDAD48C209F1B0F002B865E /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDAD48B209F1B0F002B865E /* UIColorExtensions.swift */; };
 		0DDAD490209F1F08002B865E /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDAD48F209F1F08002B865E /* BaseNavigationController.swift */; };
 		0DDAD492209F1F8F002B865E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDAD491209F1F8F002B865E /* BaseViewController.swift */; };
+		0DDAD494209F308F002B865E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDAD493209F308F002B865E /* NetworkManager.swift */; };
+		0DDAD497209F32AD002B865E /* FeedElementDraft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDAD496209F32AD002B865E /* FeedElementDraft.swift */; };
+		0DDAD499209F3744002B865E /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDAD498209F3744002B865E /* DataExtensions.swift */; };
 		474579398CC0D8B95E2B7187 /* Pods_flickr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84984FBBE749F9F2356F50D /* Pods_flickr.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +32,9 @@
 		0DDAD48B209F1B0F002B865E /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		0DDAD48F209F1F08002B865E /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		0DDAD491209F1F8F002B865E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		0DDAD493209F308F002B865E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		0DDAD496209F32AD002B865E /* FeedElementDraft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedElementDraft.swift; sourceTree = "<group>"; };
+		0DDAD498209F3744002B865E /* DataExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtensions.swift; sourceTree = "<group>"; };
 		326D496273D04F64EAB7489C /* Pods-flickr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flickr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flickr/Pods-flickr.debug.xcconfig"; sourceTree = "<group>"; };
 		685DC8B3A31ED19D00D89CFA /* Pods-flickr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flickr.release.xcconfig"; path = "Pods/Target Support Files/Pods-flickr/Pods-flickr.release.xcconfig"; sourceTree = "<group>"; };
 		E84984FBBE749F9F2356F50D /* Pods_flickr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_flickr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +94,7 @@
 			children = (
 				0DDAD480209F19B4002B865E /* Controllers */,
 				0DDAD481209F19BB002B865E /* Delegates */,
+				0DDAD495209F3295002B865E /* Drafts */,
 				0DDAD488209F1A8E002B865E /* Extensions */,
 				0DDAD482209F19CB002B865E /* Managers */,
 				0DDAD483209F19CF002B865E /* Models */,
@@ -116,6 +123,7 @@
 		0DDAD482209F19CB002B865E /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				0DDAD493209F308F002B865E /* NetworkManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -146,6 +154,7 @@
 		0DDAD488209F1A8E002B865E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0DDAD498209F3744002B865E /* DataExtensions.swift */,
 				0DDAD48B209F1B0F002B865E /* UIColorExtensions.swift */,
 			);
 			path = Extensions;
@@ -166,6 +175,14 @@
 				0DDAD491209F1F8F002B865E /* BaseViewController.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		0DDAD495209F3295002B865E /* Drafts */ = {
+			isa = PBXGroup;
+			children = (
+				0DDAD496209F32AD002B865E /* FeedElementDraft.swift */,
+			);
+			path = Drafts;
 			sourceTree = "<group>";
 		};
 		EF88056C53F305AC9738ABDC /* Pods */ = {
@@ -278,12 +295,10 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-flickr/Pods-flickr-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,9 +313,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DDAD497209F32AD002B865E /* FeedElementDraft.swift in Sources */,
 				0DDAD46C209F18C5002B865E /* AppDelegate.swift in Sources */,
 				0DDAD487209F1A6A002B865E /* MainViewController.swift in Sources */,
 				0DDAD48A209F1ADD002B865E /* ColorPalette.swift in Sources */,
+				0DDAD494209F308F002B865E /* NetworkManager.swift in Sources */,
+				0DDAD499209F3744002B865E /* DataExtensions.swift in Sources */,
 				0DDAD490209F1F08002B865E /* BaseNavigationController.swift in Sources */,
 				0DDAD48C209F1B0F002B865E /* UIColorExtensions.swift in Sources */,
 				0DDAD492209F1F8F002B865E /* BaseViewController.swift in Sources */,
@@ -442,7 +460,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "$(SRCROOT)/Support/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tretton37.flickr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -457,7 +479,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "$(SRCROOT)/Support/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tretton37.flickr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
