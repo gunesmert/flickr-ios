@@ -17,6 +17,8 @@ final class PhotoCell: UITableViewCell, Identifiable {
 		return view
 	}()
 	
+	let photoInformationView = PhotoInformationView(frame: CGRect.zero)
+	
 	// MARK: - Initialization / Deinitialization
 	required init?(coder aDecoder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
@@ -26,11 +28,15 @@ final class PhotoCell: UITableViewCell, Identifiable {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		
 		contentView.addSubview(photoView)
-		
 		photoView.snp.makeConstraints { make in
 			make.leading.top.trailing.equalToSuperview()
 			make.bottom.equalToSuperview().inset(8.0)
 			make.height.equalTo(0.0).priority(999)
+		}
+		
+		photoView.addSubview(photoInformationView)
+		photoInformationView.snp.makeConstraints { make in
+			make.leading.bottom.trailing.equalToSuperview()
 		}
 	}
 }

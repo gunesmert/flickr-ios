@@ -65,17 +65,22 @@ final class MainViewController: BaseViewController {
 	private func configure(_ cell: PhotoCell, forRowAt indexPath: IndexPath) {
 		guard indexPath.row < photos.count else { return }
 		
-		let photo = photos[indexPath.row]
+		var photo = photos[indexPath.row]
+		cell.photoInformationView.authorLabel.text = photo.author
+		cell.photoInformationView.tagsLabel.text = photo.formattedTags
+		cell.photoInformationView.timeLabel.text = photo.formattedTime
 		
 		guard let bundle = photo.mediumMediaBundle else { return }
 		
 		if let url = URL(string: bundle.urlString) {
+			cell.photoInformationView.isHidden = true
 			cell.photoView.contentMode = UIViewContentMode.center
 			cell.photoView.kf.setImage(with: url,
 									   placeholder: UIImage(named: "icon-ninja-star"),
 									   options: nil,
 									   progressBlock: nil) { (_, error, _, _) in
 				if error == nil {
+					cell.photoInformationView.isHidden = false
 					cell.photoView.contentMode = UIViewContentMode.scaleAspectFit
 				}
 			}
@@ -94,7 +99,9 @@ final class MainViewController: BaseViewController {
 
 // MARK: - UITableViewDelegate
 extension MainViewController: UITableViewDelegate {
-	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		
+	}
 }
 
 // MARK: - UITableViewDataSource
