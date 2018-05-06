@@ -69,4 +69,16 @@ struct FeedPhoto: Decodable {
 			largeMediaBundle = nil
 		}
 	}
+	
+	// MARK: - Helper
+	lazy var formattedTags: String = {
+		return tags.components(separatedBy: " ").compactMap({ "#\($0)" }).joined(separator: " ")
+	}()
+	
+	lazy var formattedTime: String? = {
+		let dateFormatter = DateFormatter.defaultDateFormatter()
+		guard let date = dateFormatter.date(from: dateTaken) else { return nil }
+		let displayFormatter = DateFormatter.defaultTimeDisplayFormatter()
+		return displayFormatter.string(from: date)
+	}()
 }

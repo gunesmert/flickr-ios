@@ -21,6 +21,10 @@
 		0DDAD49B209F3F75002B865E /* FeedElementsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDAD49A209F3F75002B865E /* FeedElementsResponse.swift */; };
 		0DDAD49F209F400F002B865E /* FeedPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDAD49E209F400F002B865E /* FeedPhoto.swift */; };
 		0DDAD4A3209F4411002B865E /* MediaBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDAD4A2209F4411002B865E /* MediaBundle.swift */; };
+		0DDAD4A6209F5563002B865E /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDAD4A5209F5563002B865E /* PhotoCell.swift */; };
+		0DDAD4AA209F55EB002B865E /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDAD4A9209F55EB002B865E /* Identifiable.swift */; };
+		0DDAD4AC209F6ABC002B865E /* PhotoInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDAD4AB209F6ABC002B865E /* PhotoInformationView.swift */; };
+		0DDAD4AE209F74C0002B865E /* DateFormatterExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDAD4AD209F74C0002B865E /* DateFormatterExtensions.swift */; };
 		474579398CC0D8B95E2B7187 /* Pods_flickr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84984FBBE749F9F2356F50D /* Pods_flickr.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +45,10 @@
 		0DDAD49A209F3F75002B865E /* FeedElementsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedElementsResponse.swift; sourceTree = "<group>"; };
 		0DDAD49E209F400F002B865E /* FeedPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPhoto.swift; sourceTree = "<group>"; };
 		0DDAD4A2209F4411002B865E /* MediaBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaBundle.swift; sourceTree = "<group>"; };
+		0DDAD4A5209F5563002B865E /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		0DDAD4A9209F55EB002B865E /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
+		0DDAD4AB209F6ABC002B865E /* PhotoInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInformationView.swift; sourceTree = "<group>"; };
+		0DDAD4AD209F74C0002B865E /* DateFormatterExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtensions.swift; sourceTree = "<group>"; };
 		326D496273D04F64EAB7489C /* Pods-flickr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flickr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flickr/Pods-flickr.debug.xcconfig"; sourceTree = "<group>"; };
 		685DC8B3A31ED19D00D89CFA /* Pods-flickr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flickr.release.xcconfig"; path = "Pods/Target Support Files/Pods-flickr/Pods-flickr.release.xcconfig"; sourceTree = "<group>"; };
 		E84984FBBE749F9F2356F50D /* Pods_flickr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_flickr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,7 +112,9 @@
 				0DDAD488209F1A8E002B865E /* Extensions */,
 				0DDAD482209F19CB002B865E /* Managers */,
 				0DDAD483209F19CF002B865E /* Models */,
+				0DDAD4A8209F55D7002B865E /* Protocols */,
 				0DDAD48D209F1B36002B865E /* Style */,
+				0DDAD4A4209F554C002B865E /* Views */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -165,6 +175,7 @@
 			children = (
 				0DDAD498209F3744002B865E /* DataExtensions.swift */,
 				0DDAD48B209F1B0F002B865E /* UIColorExtensions.swift */,
+				0DDAD4AD209F74C0002B865E /* DateFormatterExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -192,6 +203,23 @@
 				0DDAD496209F32AD002B865E /* FeedElementDraft.swift */,
 			);
 			path = Drafts;
+			sourceTree = "<group>";
+		};
+		0DDAD4A4209F554C002B865E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0DDAD4A5209F5563002B865E /* PhotoCell.swift */,
+				0DDAD4AB209F6ABC002B865E /* PhotoInformationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0DDAD4A8209F55D7002B865E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0DDAD4A9209F55EB002B865E /* Identifiable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		EF88056C53F305AC9738ABDC /* Pods */ = {
@@ -304,10 +332,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-flickr/Pods-flickr-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,14 +356,18 @@
 			files = (
 				0DDAD49F209F400F002B865E /* FeedPhoto.swift in Sources */,
 				0DDAD497209F32AD002B865E /* FeedElementDraft.swift in Sources */,
+				0DDAD4AC209F6ABC002B865E /* PhotoInformationView.swift in Sources */,
 				0DDAD46C209F18C5002B865E /* AppDelegate.swift in Sources */,
 				0DDAD487209F1A6A002B865E /* MainViewController.swift in Sources */,
 				0DDAD48A209F1ADD002B865E /* ColorPalette.swift in Sources */,
 				0DDAD494209F308F002B865E /* NetworkManager.swift in Sources */,
+				0DDAD4A6209F5563002B865E /* PhotoCell.swift in Sources */,
 				0DDAD499209F3744002B865E /* DataExtensions.swift in Sources */,
 				0DDAD490209F1F08002B865E /* BaseNavigationController.swift in Sources */,
+				0DDAD4AE209F74C0002B865E /* DateFormatterExtensions.swift in Sources */,
 				0DDAD49B209F3F75002B865E /* FeedElementsResponse.swift in Sources */,
 				0DDAD48C209F1B0F002B865E /* UIColorExtensions.swift in Sources */,
+				0DDAD4AA209F55EB002B865E /* Identifiable.swift in Sources */,
 				0DDAD4A3209F4411002B865E /* MediaBundle.swift in Sources */,
 				0DDAD492209F1F8F002B865E /* BaseViewController.swift in Sources */,
 			);

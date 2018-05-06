@@ -11,6 +11,7 @@ import UIKit
 public struct ColorPalette {
 	public static var primaryBranding = UIColor.leetGreen
 	public static var primaryBackground = UIColor.coderWhite
+	public static var primaryText = UIColor.white
 }
 
 // MARK: - Private Colors

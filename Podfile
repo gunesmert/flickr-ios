@@ -5,5 +5,6 @@ target 'flickr' do
 
   	pod 'SnapKit'
 	pod 'Alamofire'
+	pod 'Kingfisher'
   	
 end
