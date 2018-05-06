@@ -15,7 +15,7 @@ final class NetworkManager {
 	static let shared = NetworkManager()
 	
 	func fetchElements(withDraft draft: FeedElementDraft,
-					   _ completion: @escaping (String?) -> Void) {
+					   _ completion: @escaping (FeedElementsResponse?) -> Void) {
 		var parameters = draft.toDictionary()
 		parameters["api_key"] = apiKey
 		
@@ -27,10 +27,15 @@ final class NetworkManager {
 						  parameters: parameters,
 						  encoding: URLEncoding.default,
 						  headers: headers).response { (dataResponse) in
-			if let data = dataResponse.data?.trimmed() {
-				if let jsonString = String(data: data, encoding: String.Encoding.utf8) {
-					completion(jsonString)
-				}
+			guard let data = dataResponse.data?.trimmed() else {
+				completion(nil)
+				return
+			}
+			
+			do {
+				completion(try JSONDecoder().decode(FeedElementsResponse.self, from: data))
+			} catch {
+				completion(nil)
 			}
 		}
 	}

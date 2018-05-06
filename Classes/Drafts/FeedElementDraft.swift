@@ -9,7 +9,7 @@
 import Foundation
 
 private let numberOfElementsPerPage: Int = 10
-private let extras = ["description", "tags", "owner_name", "date_taken", "url_sq", "url_n", "url_z", "url_c", "url_l", "url_o"]
+private let extras = ["tags", "owner_name", "date_taken", "url_l", "url_o"]
 
 struct FeedElementDraft {
 	var tags = [String]()

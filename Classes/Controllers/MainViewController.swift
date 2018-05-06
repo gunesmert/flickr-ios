@@ -24,8 +24,8 @@ final class MainViewController: BaseViewController {
 	
 	// MARK: - Test
 	func fetchInitialData() {
-		let draft = FeedElementDraft(tags: ["tretton37"], pageNumber: 0)
-		NetworkManager.shared.fetchElements(withDraft: draft) { jsonString in
+		let draft = FeedElementDraft(tags: ["tretton37"], pageNumber: 1)
+		NetworkManager.shared.fetchElements(withDraft: draft) { response in
 			
 		}
 	}
